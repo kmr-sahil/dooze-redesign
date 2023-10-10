@@ -486,6 +486,7 @@ a {
 }
 
 .faqcontainer > div > i {
+    cursor: pointer;
     color: var(--secondary-color);
     font-size: 1.2rem;
 }
@@ -502,10 +503,13 @@ a {
 }
 
 .info {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
 }
 
 .in {
+    max-height: 100px;
     display: block;
 }
 

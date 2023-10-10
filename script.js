@@ -34,8 +34,18 @@ for (let i = 0; i < faqs.length; i++) {
     for (let j = 0; j < info.length; j++) {
       if (j === i) {
         info[j].classList.toggle("in");
+        if(faqs[j].classList.contains("fa-circle-plus")){
+          faqs[j].classList.remove("fa-circle-plus")
+          faqs[j].classList.add("fa-circle-minus")
+        }
+        else {
+          faqs[j].classList.remove("fa-circle-minus")
+          faqs[j].classList.add("fa-circle-plus")
+        }
       } else {
         info[j].classList.remove("in");
+        faqs[j].classList.remove("fa-circle-minus")
+        faqs[j].classList.add("fa-circle-plus")
       }
     }
   });
