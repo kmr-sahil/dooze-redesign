@@ -52,3 +52,43 @@ for (let i = 0; i < faqs.length; i++) {
 }
 
 
+let heroText = document.querySelector('.heroText-1')
+
+heroText.addEventListener('pointerdown', e => {
+  console.log("huing")
+  heroText.style.color = `#ffffff`
+})
+
+let featureDivs = document.querySelectorAll('.feature1-sub, .feature2-sub')
+
+function toggleFeature(index) {
+  featureDivs.forEach((div, i) => {
+    if (i === index) {
+      div.style.transform = `scale(1.05)`;
+    } else {
+      div.style.transform = `scale(1)`;
+    }
+  });
+}
+
+function toggleUp(index) {
+  featureDivs.forEach((div,i) => {
+    if (i === index) {
+      div.style.transform = `scale(1)`;
+    } else {
+      div.style.transform = `scale(1)`;
+    }
+  })
+}
+
+featureDivs.forEach((div, index) => {
+  div.addEventListener('pointerdown', () => {
+    toggleFeature(index);
+  });
+});
+
+featureDivs.forEach((div, index) => {
+  div.addEventListener('pointerup', () => {
+    toggleUp(index);
+  });
+});

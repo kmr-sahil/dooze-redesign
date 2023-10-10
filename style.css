@@ -190,9 +190,9 @@ a {
     
   }
   
-  .heroText-1:hover, .heroText-1:active {
+  /*.heroText-1:hover, .heroText-1:active {
     color: var(--text-color);
-  }
+  }*/
   
 .heroText-1:before {
     content: "";
@@ -306,6 +306,7 @@ a {
     text-align: center;
     padding: 1.5rem;
     gap: 2rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .feature1-sub > div > h2 {
@@ -379,6 +380,7 @@ a {
     text-align: center;
     padding: 1.5rem 2.25rem;
     gap: 1rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .feature2-sub > div > h2 {
