@@ -105,14 +105,22 @@ function scaleUp(index) {
   });
 }
 
-featureDivs.forEach((div, index) => {
-  div.addEventListener('pointerdown', () => {
-    scaleUp(index);
-  });
-});
-
-featureDivs.forEach((div) => {
-  div.addEventListener('pointerup', () => {
+function removeScaling() {
+  featureDivs.forEach((div) => {
     div.classList.remove('feature-scaling');
   });
+}
+
+featureDivs.forEach((div, index) => {
+  div.addEventListener('pointerdown', (event) => {
+    scaleUp(index);
+  });
+
+  div.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Prevent default touch behavior
+    scaleUp(index);
+  });
+
+  div.addEventListener('pointerup', removeScaling);
+  div.addEventListener('touchend', removeScaling);
 });
