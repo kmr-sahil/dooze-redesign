@@ -59,7 +59,7 @@ heroText.addEventListener('pointerdown', e => {
   heroText.style.color = `#ffffff`
 })
 
-let featureDivs = document.querySelectorAll('.feature1-sub, .feature2-sub')
+/*let featureDivs = document.querySelectorAll('.feature1-sub, .feature2-sub')
 
 function toggleFeature(index) {
   featureDivs.forEach((div, i) => {
@@ -90,5 +90,29 @@ featureDivs.forEach((div, index) => {
 featureDivs.forEach((div, index) => {
   div.addEventListener('pointerup', () => {
     toggleUp(index);
+  });
+});*/
+
+let featureDivs = document.querySelectorAll('.feature1-sub, .feature2-sub');
+
+function scaleUp(index) {
+  featureDivs.forEach((div, i) => {
+    if (i === index) {
+      div.classList.add('feature-scaling');
+    } else {
+      div.classList.remove('feature-scaling');
+    }
+  });
+}
+
+featureDivs.forEach((div, index) => {
+  div.addEventListener('pointerdown', () => {
+    scaleUp(index);
+  });
+});
+
+featureDivs.forEach((div) => {
+  div.addEventListener('pointerup', () => {
+    div.classList.remove('feature-scaling');
   });
 });
